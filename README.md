@@ -2,6 +2,8 @@
 
 Trabalho da faculdade de Engenharia de Software. É um sistema desktop de biblioteca feito em Java Swing, ligado a um banco MySQL por JDBC.
 
+Os autores são Vinícius da Motta Carvalho Faria, João Pedro Pedroso, Erik Uller e Luis Miguel de Aguida Madureira dos Santos.
+
 ## Tema
 
 Gerenciamento de uma biblioteca pequena, com cadastro de categorias, livros, usuários e empréstimos.
