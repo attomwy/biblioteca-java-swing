@@ -120,9 +120,21 @@ Os protótipos estão neste arquivo: [Ver protótipos](prototipos/prototipos-tel
 
 O banco `biblioteca.db` e as quatro tabelas são criados automaticamente ao usar o sistema. O script também está em `banco/biblioteca.sql`.
 
-## Como executar
+## Como executar (SQLite)
 
 1. Instalar Java 21 e o driver [SQLite JDBC](https://github.com/xerial/sqlite-jdbc/releases).
 2. Colocar o arquivo `sqlite-jdbc-*.jar` na pasta `lib` e adicioná-lo às bibliotecas Java do VS Code (Classpath > Libraries). Se o driver exigir SLF4J, adicionar também as dependências necessárias.
 3. Executar `src/main/java/view/TelaPrincipal.java`.
 4. Cadastrar categoria e usuário, depois livro e empréstimo. O arquivo `biblioteca.db` é criado automaticamente.
+
+## Alternativa MySQL
+
+Arquivos em [alternativa-mysql](alternativa-mysql): script SQL e classe de conexão originais.
+
+1. Executar `alternativa-mysql/biblioteca.sql` em um servidor MySQL com acesso autorizado.
+2. Copiar `alternativa-mysql/Conexao.java` para `src/main/java/conexao/Conexao.java`, substituindo a versão SQLite.
+3. Adicionar o [MySQL Connector/J](https://dev.mysql.com/downloads/connector/j/) às bibliotecas Java do projeto.
+4. Ajustar o usuário e a senha da conexão para o seu MySQL, sem publicar credenciais.
+5. Executar `view.TelaPrincipal`.
+
+Para voltar ao SQLite, restaurar a classe de conexão SQLite do repositório.
