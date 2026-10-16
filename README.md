@@ -1,6 +1,6 @@
 # Sistema de Biblioteca
 
-Trabalho da faculdade de Engenharia de Software. É um sistema desktop de biblioteca feito em Java Swing, ligado a um banco MySQL por JDBC.
+Trabalho da faculdade de Engenharia de Software. É um sistema desktop de biblioteca feito em Java Swing, com banco SQLite por JDBC.
 
 Os autores são Vinícius da Motta Carvalho Faria, João Pedro Pedroso, Erik Uller e Luis Miguel de Aguida Madureira dos Santos.
 
@@ -13,7 +13,7 @@ Gerenciamento de uma biblioteca pequena, com cadastro de categorias, livros, usu
 - Java
 - Java Swing
 - JDBC
-- MySQL
+- SQLite
 - Padrão MVC
 
 ## O que o sistema faz
@@ -34,7 +34,7 @@ Algumas coisas para saber na hora de usar:
 - `model`: classes das entidades.
 - `view`: telas feitas com Java Swing.
 - `controller`: comunicação entre as telas e o banco de dados.
-- `conexao`: classe responsável pela conexão JDBC com o MySQL.
+- `conexao`: classe responsável pela conexão JDBC com o SQLite.
 
 Pastas do projeto:
 
@@ -118,11 +118,11 @@ Os protótipos estão neste arquivo: [Ver protótipos](prototipos/prototipos-tel
 
 ## Banco de dados
 
-O script que cria o banco e as quatro tabelas está em `banco/biblioteca.sql`.
+O banco `biblioteca.db` e as quatro tabelas são criados automaticamente ao usar o sistema. O script também está em `banco/biblioteca.sql`.
 
 ## Como executar
 
-1. Rodar o script `banco/biblioteca.sql` no MySQL.
-2. Adicionar o driver oficial MySQL Connector/J ao projeto.
-3. Conferir usuário e senha em `src/main/java/conexao/Conexao.java`. Por padrão ele usa `root`, sem senha, em `localhost:3306`.
-4. Executar a classe `TelaPrincipal`, que é a que tem o `main`.
+1. Instalar Java 21 e o driver [SQLite JDBC](https://github.com/xerial/sqlite-jdbc/releases).
+2. Colocar o arquivo `sqlite-jdbc-*.jar` na pasta `lib` e adicioná-lo às bibliotecas Java do VS Code (Classpath > Libraries). Se o driver exigir SLF4J, adicionar também as dependências necessárias.
+3. Executar `src/main/java/view/TelaPrincipal.java`.
+4. Cadastrar categoria e usuário, depois livro e empréstimo. O arquivo `biblioteca.db` é criado automaticamente.
