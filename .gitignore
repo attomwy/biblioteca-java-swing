@@ -4,3 +4,9 @@ build/
 target/
 .idea/
 *.iml
+
+*.db
+*.db-journal
+*.db-wal
+*.db-shm
+lib/*.jar
